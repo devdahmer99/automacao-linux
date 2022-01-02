@@ -34,7 +34,7 @@ de estar utilizando uma distro linux 18.0.*^**
 
 Clone o Repositório ou baixe o zip do arquivo:
 
-cd auto
+cd automacao-linux
 
 chmod 777 automatiza.sh
 
