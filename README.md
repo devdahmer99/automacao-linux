@@ -1,6 +1,5 @@
 **Automação Linux - Pós Instalação
-Seja bem vindo! a baixo você irá encontrar a lista de todos os programas instalaveis com o script.
-**
+Seja bem vindo! a baixo você irá encontrar a lista de todos os programas instalaveis com o script.**
 
 **Softwares instalaveis:**
 
