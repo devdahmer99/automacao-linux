@@ -1,6 +1,6 @@
 **Automação Linux - Pós Instalação
 Seja bem vindo! a baixo você irá encontrar a lista de todos os programas instalaveis com o script.
-Build Status
+Build Status**
 
 **Softwares instalaveis:**
 
