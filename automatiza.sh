@@ -10,7 +10,8 @@ sudo apt install software-properties-common ; sudo add-apt-repository ppa:ondrej
 sudo apt update &&
 
 # Instalacao de pacotes e programas nativos do repositorio principal do Ubuntu
-sudo apt install python3 git curl libssl-dev php7.4 composer php7.4-common php7.4-mysql php7.4-xml php7.4-xmlrpc php7.4-curl php7.4-gd php7.4-imagick php7.4-cli php7.4-dev php7.4-imap php7.4-mbstring php7.4-opcache php7.4-soap php7.4-zip php7.4-intl php-xdebug php7.4-pgsql -y &&
+sudo apt install python3 git curl libssl-dev php8.0 composer php8.0-common php8.0-mysql php8.0-xml php8.0-xmlrpc php8.0-curl php8.0-gd php8.0-imagick php8.0-cli php8.0-dev php8.0-imap php8.0-mbstring php8.0-opcache php8.0-soap php8.0-zip php8.0-intl php8.0-xdebug php8.0-pgsql -y &&
+
 
 # Instalaçao dos softwares que utilizam o gerenciador de pacotes snap
 
