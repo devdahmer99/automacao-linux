@@ -6,19 +6,27 @@ Seja bem vindo! abaixo você irá encontrar a lista de todos os programas instal
 
 **🖥️ PHP STORM**
 
+**🖥️ CLion**
+
+**🖥️ InteliJ Java IDE**
+
+**🖥️ DBWeaver-ce**
+
 **🖥️ POSTMAN**
 
 **🖥️ GIT**
+
+**🖥️ Docker e Docker-Compose**
+
+**🖥️ PostgreSQL e PGAdmin 4**
 
 **🖥️ VSCODE**
 
 **🖥 NODEJS**
 
-**🖥️ BEEKEEPER IDE SQL**
-
 **🖥️ GOOGLE CHROME**
 
-**🖥️ PHP7.4 E TODAS AS PRINCIPAIS EXTENÇÕES**
+**🖥️ PHP8.1 E TODAS AS PRINCIPAIS EXTENÇÕES**
 
 **🖥️ COMPOSER**
 
@@ -36,7 +44,7 @@ Clone o Repositório ou baixe o zip do arquivo:
 
 cd automacao-linux
 
-chmod 777 automatiza.sh
+chmod +x automatiza.sh
 
 execute o comando abaixo:
 
