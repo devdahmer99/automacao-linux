@@ -1,37 +1,70 @@
-#bin/bash 
+#!/bin/bash
 
-echo "Iniciando Processo de Instalação dos softwares mais utilizados por mim:"
+# Atualizar o sistema
+sudo apt update && sudo apt upgrade -y
 
-# Caso exista alguma trava de um processo.
-sudo rm /var/lib/dpkg/lock-frontend ; sudo rm /var/cache/apt/archives/lock;
+# Instalar Git
+sudo apt install git -y
 
-# Instalação do Softwares-Properties-Common e Adição do PPA do PHP
-sudo apt install software-properties-common ; sudo add-apt-repository ppa:ondrej/php ;
+# Instalar Postman
+sudo snap install postman
 
-# Atualizaçao geral de repositórios
-sudo apt update && apt upgrade -y
+# Instalar Rider
+sudo snap install rider --classic
 
-# Instalacao de pacotes e programas nativos do repositorio principal do Ubuntu
-sudo apt install python3 git curl libssl-dev php8.1 composer php8.1-common php8.1-mysql php8.1-xml php8.1-xmlrpc php8.1-curl php8.1-gd php8.1-imagick php8.1-cli php8.1-dev php8.1-imap php8.1-mbstring php8.1-opcache php8.1-soap php8.1-zip php8.1-intl php8.1-xdebug php8.1-pgsql -y &&
+# Instalar VS Code
+sudo snap install code --classic
 
-# Instalaçao dos softwares que utilizam o gerenciador de pacotes snap
+# Instalar Node.js
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt install -y nodejs
 
-sudo snap install snapcraft --classic &&
-sudo snap install phpstorm --classic &&
-sudo snap install postman &&
-sudo snap install node --classic &&
-sudo snap install code --classic &&
-sudo snap install dbeaver-ce &&
-sudo snap install spotify &&
-sudo snap install vlc && 
+# Adicionar PPA para PHP 8 e Instalar PHP 8
+sudo add-apt-repository ppa:ondrej/php -y
+sudo apt update
+sudo apt install php8.4 php8.4-cli php8.4-fpm php8.4-mysql -y
 
-# Softwares que precisam de Download externo
+# Instalar Google Chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb -y
 
-# Caso ainda exista alguma trava de um processo.
-sudo rm /var/lib/dpkg/lock-frontend ; sudo rm /var/cache/apt/archives/lock;
+# Instalar Docker
+sudo apt install docker.io -y
+sudo systemctl start docker
+sudo systemctl enable docker
 
-cd ~/Downloads/ &&wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i *.deb 
+# Instalar MySQL Server
+sudo apt install mysql-server -y
+sudo systemctl start mysql
+sudo systemctl enable mysql
 
-echo "Execução Finalizada! Reiniciando o Sistema para concluir as modificações"
+# Instalar MySQL Workbench
+sudo apt install mysql-workbench -y
 
-sudo reboot now
+# Instalar Spotify
+sudo snap install spotify
+
+# Instalar .NET 9
+wget https://packages.microsoft.com/config/ubuntu/24.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+sudo apt update
+sudo apt install -y dotnet-sdk-9.0
+
+# Otimização do Desempenho do Linux
+# Ajustes e configurações de desempenho
+# Exemplos:
+# - Limpar pacotes desnecessários
+# - Ajustar swappiness
+# - Configurar serviços para iniciar com o sistema
+
+# Limpar pacotes desnecessários
+sudo apt autoremove -y
+
+# Ajustar swappiness (reduzir uso de swap)
+sudo sysctl vm.swappiness=10
+
+# Otimizar serviços para inicialização
+sudo systemctl disable some-unnecessary-service
+# Adicionar mais otimizações conforme necessário
+
+echo "Instalação e otimização concluídas com sucesso!"
