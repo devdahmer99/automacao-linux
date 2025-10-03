@@ -102,6 +102,9 @@ install_php() {
 install_composer() {
     log "Instalando Composer..."
 
+    # Navega para o diretório temporário para garantir permissão de escrita
+    pushd /tmp > /dev/null
+
     # Download e verificação do Composer
     EXPECTED_CHECKSUM="$(wget -q -O - https://composer.github.io/installer.sig)"
     php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -110,6 +113,7 @@ install_composer() {
     if [ "$EXPECTED_CHECKSUM" != "$ACTUAL_CHECKSUM" ]; then
         error "Checksum do Composer inválido"
         rm composer-setup.php
+        popd > /dev/null # Garante que vamos voltar ao diretório original
         exit 1
     fi
 
@@ -117,6 +121,9 @@ install_composer() {
     rm composer-setup.php
     sudo mv composer.phar /usr/local/bin/composer
     sudo chmod +x /usr/local/bin/composer
+
+    # Volta para o diretório original
+    popd > /dev/null
 
     composer_version=$(composer --version)
     log "Composer instalado: $composer_version"
